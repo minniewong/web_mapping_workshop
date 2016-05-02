@@ -109,9 +109,7 @@ function getDirections(frm, to){
         ],
     costing: 'pedestrian',
       units: 'miles'
-    
     })
-    
 	$.ajax({
     	url: 'https://valhalla.mapzen.com/route',
       	data: {
@@ -130,6 +128,7 @@ function getDirections(frm, to){
           	"stroke": "#ed23f1",
             "stroke-opacity": 0.8,
             "stroke-width": 8
+          }
         })
     })
 }
