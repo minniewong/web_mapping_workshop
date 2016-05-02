@@ -108,7 +108,7 @@ function getDirections(frm, to){
     costing: 'pedestrian',
       directions_options:{
       units: 'miles'
-    }
+    })
 	$.ajax({
     	url: 'https://valhalla.mapzen.com/route',
       	data: {
