@@ -109,6 +109,7 @@ function getDirections(frm, to){
       units: 'miles'
     
     })
+    }
 	$.ajax({
     	url: 'https://valhalla.mapzen.com/route',
       	data: {
