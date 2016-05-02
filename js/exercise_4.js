@@ -102,8 +102,10 @@ var routeLine = L.mapbox.featureLayer().addTo(map);
 function getDirections(frm, to){
 	var jsonPayload = JSON.stringify({
     	locations:[
-          {lat: frm[1],lon: lon[0]},
-          {lat: to[1],lon: lon[0]}
+          {lat: frm[1],
+           lon: lon[0]},
+          {lat: to[1],
+           lon: lon[0]}
         ],
     costing: 'pedestrian',
       units: 'miles'
