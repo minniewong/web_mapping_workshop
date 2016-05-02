@@ -70,4 +70,8 @@ featurelayer.on('ready', function(){
              })
   })
 
+  map.on ('click', function(){
+  $('#sidebar').fadeOut(200);
+  
+  })
                      
