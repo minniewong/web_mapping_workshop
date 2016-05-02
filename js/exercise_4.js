@@ -133,7 +133,6 @@ function getDirections(frm, to){
           
           }
         })
-    
     })
 }
                      
