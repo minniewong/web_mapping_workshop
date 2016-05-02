@@ -98,6 +98,7 @@ map.on('locationfound', function(e){
 map.locate({setView: true})
 
 var routeLine = L.mapbox.featureLayer().addTo(map);
+var routeHighlight = 
 
 function getDirections(frm, to){
 	var jsonPayload = JSON.stringify({
@@ -138,7 +139,7 @@ function getDirections(frm, to){
           data.trip.legs[0].maneuvers.forEach(function(item){
             
             var direction = '';
-            direction += '<li class="instruction" data-begin=' + item.begin_shape_index + ' data-end= + item.end_shape_index + '>';
+            direction += '<li class="instruction" data-begin=' + item.begin_shape_index + ' data-end=' + item.end_shape_index + '>';
             
             if(item.verbal_post_transition_instruction){
             	direction += '<p class="post-transition">' + item.verbal_post_transition_instruction + '</p>'
@@ -150,6 +151,25 @@ function getDirections(frm, to){
             $('#summary').append(direction);
         })
         
+          $('.instruction').on('mouseover', function(){
+          	var begin = Number($(this).attr)('data-begin'));
+            var end = Number($(this).attr)('data-end'));
+            routeHighLight.setGeoJSON({
+            	type:'Feature',
+              	geometry:{
+                  	type: begin === end ? 'Point' : 'LineString',
+                  	coordinates: begin === end ? routeShape.slice(begin)[0] : routeShape.slice(begin,end + 1)
+                },
+              	properties:{
+                  	"stroke":"#1ea6f2",
+                  	"stroke-width":10,
+                  	"marker-color": "1ea6f2"
+                  
+                  	
+                }
+            })
+            
+         $
     })
 }
 
